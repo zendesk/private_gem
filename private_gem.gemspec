@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
   spec.summary       = 'Tries to help you make sure your private gems stay private'
   # spec.description   = ''
   spec.homepage      = 'https://github.com/zendesk/private_gem'
-  spec.license       = 'Apache License Version 2.0'
+  spec.license       = 'PRIVATE'
 
   spec.files         = `git ls-files -z`.split("\x0")
   spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
