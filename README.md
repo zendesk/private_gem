@@ -1,12 +1,13 @@
 # Private Gem
 
 `private_gem` serves two purposes:
+
 1. It provides rake rasks for building and pushing private gems to a private gem server. These tasks are based on the tasks in Bundler but with added protection against accidental pushes to rubygems.org.
 2. It comes with a generator for creating skeletons for new private gems.
 
 ## The Rake Tasks
 
-`private_gem` includes Rake tasks you can use to build, install, and pushing your private gem to a private gem server.
+`private_gem` includes Rake tasks you can use to build, install, and push your private gem to a private gem server.
 The tasks are based on the ones that come with Bundler.
 
 You can install the tasks in your `Rakefile` like this:
