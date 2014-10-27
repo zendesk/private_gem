@@ -1,3 +1,10 @@
 #!/usr/bin/env ruby
 
+require 'bundler'
 require 'private_gem'
+
+require 'bundler/friendly_errors'
+Bundler.with_friendly_errors do
+  require 'private_gem/cli'
+  PrivateGem::CLI.start(ARGV, :debug => true)
+end
