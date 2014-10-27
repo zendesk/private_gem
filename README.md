@@ -1,31 +1,46 @@
-# PrivateGem
+# Private Gem
 
-TODO: Write a gem description
+`private_gem` serves two purposes:
+1. It provides rake rasks for building and pushing private gems to a private gem server. These tasks are based on the tasks in Bundler but with added protection against accidental pushes to rubygems.org.
+2. It comes with a generator for creating skeletons for new private gems.
 
-## Installation
+## The Rake Tasks
 
-Add this line to your application's Gemfile:
+`private_gem` includes Rake tasks you can use to build, install, and pushing your private gem to a private gem server.
+The tasks are based on the ones that come with Bundler.
+
+You can install the tasks in your `Rakefile` like this:
 
 ```ruby
-gem 'private_gem'
+require 'private_gem/tasks'
+
 ```
 
-And then execute:
+This will provide 3 rake tasks:
+ * `build` will build a local `.gem` file.
+ * `install` will build and install the local gem.
+ * `release` will tag and push your gem to you private gem server.
 
-    $ bundle
+## The Private Gem Generator
 
-Or install it yourself as:
+`private_gem` comes with a generator you can use for making new private gems.
 
-    $ gem install private_gem
+```
+~ private_gem new my_private_library
+   create  my_private_library/Gemfile
+   create  my_private_library/Rakefile
+   create  my_private_library/README.md
+   create  my_private_library/.gitignore
+   create  my_private_library/my_private_library.gemspec
+   create  my_private_library/lib/my_private_library.rb
+   create  my_private_library/lib/my_private_library/version.rb
+   create  my_private_library/test/minitest_helper.rb
+   create  my_private_library/test/test_my_private_library.rb
+   create  my_private_library/.travis.yml
+~
+```
 
-## Usage
+This will generate a new gem called `my_private_library` with the `private_gem` Rake tasks preinstalled.
 
-TODO: Write usage instructions here
-
-## Contributing
-
-1. Fork it ( https://github.com/[my-github-username]/private_gem/fork )
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create a new Pull Request
+## License
+Private for now
