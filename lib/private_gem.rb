@@ -31,10 +31,7 @@ module PrivateGem
     end
   end
 
-  def self.server_with_credentials
-    url = URI.parse(server)
-    auth = Bundler.settings[server]
-    url.user, url.password = auth.split(':', 2)
-    url.to_s
+  def self.credentials
+    Bundler.settings[server]
   end
 end

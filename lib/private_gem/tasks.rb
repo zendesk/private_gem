@@ -19,8 +19,9 @@ module PrivateGem
     protected
 
     def rubygem_push(path)
-      if PrivateGem.server_with_credentials
-        sh("gem push '#{path}' --host '#{PrivateGem.server_with_credentials}'")
+      if PrivateGem.server && PrivateGem.credentials
+        Bundler.ui.confirm sh("curl --data-binary '@#{path}' --user '#{PrivateGem.credentials}' --header 'Content-Type: application/octet-stream' --silent #{PrivateGem.server}api/v1/gems")
+
         Bundler.ui.confirm "Pushed #{name} #{version} to #{PrivateGem.server}."
       else
         raise "Your private gem server credentials aren't set."
