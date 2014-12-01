@@ -1,11 +1,11 @@
 require 'minitest_helper'
 
-class Test<%= config[:constant_name] %> < MiniTest::Unit::TestCase
-  def test_that_it_has_a_version_number
-    refute_nil ::<%= config[:constant_name] %>::VERSION
+describe <%= config[:constant_name] %> do
+  it 'has a version number' do
+    ::<%= config[:constant_name] %>::VERSION.wont_be_nil
   end
 
-  def test_it_does_something_useful
-    assert false
+  it 'does something useful' do
+    flunk 'It does nothing useful!'
   end
 end
