@@ -7,7 +7,7 @@ module PrivateGem
       super
 
       Rake::Task[:release].clear_comments
-      Rake::Task[:release].comment = "Create tag v#{version} and build and push #{name}-#{version}.gem to #{PrivateGem.server}"
+      Rake::Task[:release].comment = "Create tag v#{version} and build and push #{name}-#{version}.gem to your private gem server"
 
       task :verify_gemspec do
         verify_allowed_push_host
