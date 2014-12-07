@@ -19,5 +19,5 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'bundler', '~> 1.7'
   spec.add_dependency 'rake', '~> 10.0'
 
-  spec.metadata['allowed_push_host'] = "http://localhost:3000/gems/"
+  spec.metadata['allowed_push_host'] = 'https://gem.zdsys.com/gems/'
 end
