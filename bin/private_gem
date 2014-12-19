@@ -1,0 +1,12 @@
+#!/usr/bin/env ruby
+
+require 'bundler'
+root = File.expand_path('../..', __FILE__)
+$LOAD_PATH << "#{root}/lib" if File.exist?("#{root}/Gemfile")
+require 'private_gem'
+
+require 'bundler/friendly_errors'
+Bundler.with_friendly_errors do
+  require 'private_gem/cli'
+  PrivateGem::CLI.start(ARGV, :debug => true)
+end

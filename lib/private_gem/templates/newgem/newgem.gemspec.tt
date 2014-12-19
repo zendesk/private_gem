@@ -1,0 +1,22 @@
+require './lib/<%= config[:namespaced_path] %>/version'
+
+Gem::Specification.new do |spec|
+  spec.name          = <%= config[:name].inspect %>
+  spec.version       = <%= config[:constant_name] %>::VERSION
+  spec.authors       = [<%= config[:author].inspect %>]
+  spec.email         = [<%= config[:email].inspect %>]
+  spec.summary       = %q{TODO: Write a short summary. Required.}
+  spec.description   = %q{TODO: Write a longer description. Optional.}
+  spec.homepage      = ''
+  spec.license       = 'PRIVATE'
+
+  spec.metadata['allowed_push_host'] = <%= PrivateGem.server.inspect %>
+
+  spec.files         = Dir.glob('lib/**/*')
+  spec.executables   = Dir.glob('bin/**/*').map {|f| File.basename(f)}
+
+  spec.add_development_dependency 'private_gem'
+  spec.add_development_dependency 'bundler'
+  spec.add_development_dependency 'rake'
+  spec.add_development_dependency 'minitest'
+end

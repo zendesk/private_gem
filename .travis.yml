@@ -1,0 +1,5 @@
+before_install: bundle config https://some-fake-gem-server.com 123:456
+language: ruby
+rvm:
+  - 2.0
+  - 2.1
