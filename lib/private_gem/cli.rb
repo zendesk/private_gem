@@ -36,6 +36,7 @@ module PrivateGem
       template 'newgem/Gemfile.tt', "#{target}/Gemfile", opts
       template "newgem/Rakefile.tt", "#{target}/Rakefile", opts
       template "newgem/README.md.tt", "#{target}/README.md", opts
+      template "newgem/CHANGELOG.md.tt", "#{target}/CHANGELOG.md", opts
       template "newgem/gitignore.tt", "#{target}/.gitignore", opts
       template "newgem/newgem.gemspec.tt", "#{target}/#{name}.gemspec", opts
       template "newgem/lib/newgem.rb.tt", "#{target}/lib/#{namespaced_path}.rb", opts
