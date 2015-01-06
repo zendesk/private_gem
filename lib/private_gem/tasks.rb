@@ -32,7 +32,11 @@ module PrivateGem
       allowed_push_host = gemspec.metadata['allowed_push_host']
 
       if allowed_push_host != PrivateGem.server
-        abort("You must set allowed_push_host to #{PrivateGem.server} in #{File.basename(spec_path)} to prevent accidental pushes to rubygems.org")
+        abort_message = %Q~
+          Please add the following to #{File.basename(spec_path)} (to prevent accidental pushes to rubygems.org):
+          gemspec.metadata['allowed_push_host'] = '#{PrivateGem.server}'
+        ~.gsub(/^ +/m, '')
+        abort(abort_message + "\n")
       end
     end
   end
