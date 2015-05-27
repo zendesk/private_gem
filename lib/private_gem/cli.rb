@@ -1,4 +1,5 @@
 require 'bundler/cli'
+require 'thor'
 
 module PrivateGem
   class CLI < Thor
