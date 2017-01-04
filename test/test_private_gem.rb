@@ -35,6 +35,7 @@ describe PrivateGem do
           File.exist?(".travis.yml").must_equal true
           File.exist?(".gitignore").must_equal true
           File.exist?("bin/foo").must_equal false
+          File.exist?("CHANGELOG.md").must_equal true
         end
       end
 

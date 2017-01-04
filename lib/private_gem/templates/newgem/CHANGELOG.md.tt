@@ -1,0 +1,29 @@
+# Changelog
+
+## master (unreleased)
+
+### New features
+
+- Added --foobar flag
+
+### Changes
+
+- Deprecated blurb argument to SomeClass.new
+
+### Bug fixes
+
+- Fixed #42 Incorrect handling of newline
+
+## v0.0.1
+
+### New features
+
+- Everything is new
+
+### Changes
+
+- None, first release
+
+### Bug fixes
+
+- None, first release
