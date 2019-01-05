@@ -1,49 +1,38 @@
-# Private Gem
+# Private Gem [![Build Status](https://travis-ci.org/zendesk/private_gem.png)](https://travis-ci.org/zendesk/private_gem)
 
-`private_gem` serves two purposes:
+ - rake tasks for building and pushing gems to a private gem server, with added protection against pushing to rubygems.org
+ - generator for creating new private gems
 
-1. It provides rake tasks for building and pushing private gems to a private gem server. These tasks are based on the tasks in Bundler but with added protection against accidental pushes to rubygems.org.
-2. It comes with a generator for creating skeletons for new private gems.
 
-## The Rake Tasks
-
-`private_gem` includes Rake tasks you can use to build, install, and push your private gem to a private gem server.
-The tasks are based on the ones that come with Bundler.
-
-You can install the tasks in your `Rakefile` like this:
+## Rake Tasks
 
 ```ruby
+# Rakefile
 require 'private_gem/tasks'
-
 ```
 
-This will provide 3 rake tasks:
- * `build` will build a local `.gem` file.
- * `install` will build and install the local gem.
- * `release` will tag and push your gem to your private gem server.
+ * `rake build` build a local `.gem` file
+ * `rake install` build and install the local gem
+ * `rake release` tag and push gem to private gem server
 
-## The Private Gem Generator
+(Based on the tasks from `bundler/gem_tasks`)
 
-`private_gem` comes with a generator you can use for making new private gems.
 
-```
-~ private_gem new my_private_library
+## Private Gem Generator
+
+```bash
+private_gem new my_private_library
    create  my_private_library/Gemfile
    create  my_private_library/Rakefile
    create  my_private_library/README.md
-   create  my_private_library/.gitignore
-   create  my_private_library/my_private_library.gemspec
-   create  my_private_library/lib/my_private_library.rb
-   create  my_private_library/lib/my_private_library/version.rb
-   create  my_private_library/test/minitest_helper.rb
-   create  my_private_library/test/test_my_private_library.rb
-   create  my_private_library/.travis.yml
-~
+   ...
 ```
 
-This will generate a new gem called `my_private_library` with the `private_gem` Rake tasks preinstalled.
+Generates a new local gem called `my_private_library` with the `private_gem` Rake tasks preinstalled.
+
 
 ## License
+
 Copyright 2014 Zendesk
 
 Licensed under the Apache License, Version 2.0 (the “License”); you may not use this file except in compliance with the License. You may obtain a copy of the License at

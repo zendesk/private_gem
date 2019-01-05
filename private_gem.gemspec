@@ -5,7 +5,7 @@ Gem::Specification.new do |spec|
   spec.version       = PrivateGem::VERSION
   spec.authors       = ['Mick Staugaard']
   spec.email         = ['mick@staugaard.com']
-  spec.summary       = 'Tries to help you make sure your private gems stay private'
+  spec.summary       = 'Keeps your private gems private'
   spec.homepage      = 'https://github.com/zendesk/private_gem'
   spec.license       = 'Apache License Version 2.0'
 
