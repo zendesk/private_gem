@@ -12,7 +12,7 @@ Gem::Specification.new do |spec|
   spec.files         = Dir.glob('lib/**/*')
   spec.executables   = Dir.glob('bin/**/*').map {|f| File.basename(f)}
 
-  spec.add_dependency 'bundler', '~> 1.7'
+  spec.add_dependency 'bundler', '> 1.7', '< 3.0'
   spec.add_dependency 'thor'
 
   spec.add_development_dependency 'minitest', '~> 5.0'
