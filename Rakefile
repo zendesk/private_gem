@@ -4,4 +4,4 @@ require 'rake/testtask'
 require 'bump/tasks'
 
 Rake::TestTask.new(:test) { }
-task :default => :test
+task default: :test
