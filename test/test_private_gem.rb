@@ -20,8 +20,8 @@ describe PrivateGem do
       privat_gem("help").must_include "private_gem new"
     end
 
-    it "shows nothing on unknown command" do
-      privat_gem("sdfsfddfs", fail: true).must_equal ""
+    it "fails on unknown command" do
+      privat_gem("sdfsfddfs", fail: true)
     end
 
     it "shows help for subcommands" do
@@ -29,10 +29,15 @@ describe PrivateGem do
     end
 
     describe "new" do
+      before do
+        dir = "#{Bundler::ORIGINAL_ENV["HOME"]}/.bundle"
+        Dir.mkdir dir unless Dir.exist? dir
+        File.write "#{dir}/config", 'BUNDLE_HTTPS://FOO__IO/BAR/: "user:pass"'
+      end
+
       it "generates a new project" do
         privat_gem("new foo")
         Dir.chdir("foo") do
-          File.exist?(".travis.yml").must_equal true
           File.exist?(".gitignore").must_equal true
           File.exist?("bin/foo").must_equal false
         end
@@ -49,7 +54,7 @@ describe PrivateGem do
     end
 
     def sh(command, options={})
-      result = Bundler.with_clean_env { `#{command} #{"2>&1" unless options[:keep_output]}` }
+      result = Bundler.with_unbundled_env { `#{command} #{"2>&1" unless options[:keep_output]}` }
       raise "#{options[:fail] ? "SUCCESS" : "FAIL"} #{command}\n#{result}" if $?.success? == !!options[:fail]
       result
     end

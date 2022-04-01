@@ -12,14 +12,13 @@ Gem::Specification.new do |spec|
   spec.files         = Dir.glob('lib/**/*')
   spec.executables   = Dir.glob('bin/**/*').map {|f| File.basename(f)}
 
-  spec.add_dependency 'bundler', '> 1.7', '< 3.0'
+  spec.add_dependency 'bundler', '> 2.2', '< 3.0'
   spec.add_dependency 'thor'
 
-  spec.add_development_dependency 'minitest', '~> 5.0'
-  spec.add_development_dependency 'minitest-around'
+  spec.add_development_dependency 'maxitest'
   spec.add_development_dependency 'bump'
-  spec.add_development_dependency 'rake', '~> 10.0'
+  spec.add_development_dependency 'rake'
   spec.add_development_dependency 'byebug'
 
-  spec.required_ruby_version = '>= 2.3' # keep in sync with .travis.yml
+  spec.required_ruby_version = '>= 2.7' # keep in sync with .github/workflows/actions.yml
 end

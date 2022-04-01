@@ -13,7 +13,7 @@ module PrivateGem
       n =~ /^([-_a-z\d]+\.)+[a-z]+$/
     end
 
-    if private_gem_server = Bundler.settings['private_gem_server']
+    if (private_gem_server = Bundler.settings['private_gem_server'])
       if urls_with_credentials.include?(private_gem_server)
         return private_gem_server
       end

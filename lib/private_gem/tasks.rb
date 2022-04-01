@@ -20,7 +20,14 @@ module PrivateGem
 
     def rubygem_push(path)
       if PrivateGem.server && PrivateGem.credentials
-        Bundler.ui.confirm sh("curl --data-binary '@#{path}' --user '#{PrivateGem.credentials}' --header 'Content-Type: application/octet-stream' --silent --fail #{PrivateGem.server}api/v1/gems")
+        Bundler.ui.confirm sh([
+          "curl",
+          "--silent", "--fail",
+          "--data-binary", "@#{path}",
+          "--user", PrivateGem.credentials,
+          "--header", "Content-Type: application/octet-stream",
+          "#{PrivateGem.server}api/v1/gems"
+        ])
 
         Bundler.ui.confirm "Pushed #{name} #{version} to #{PrivateGem.server}."
       else

@@ -1,4 +1,4 @@
-# Private Gem [![Build Status](https://travis-ci.org/zendesk/private_gem.png)](https://travis-ci.org/zendesk/private_gem)
+# Private Gem
 
  - rake tasks for building and pushing gems to a private gem server, with added protection against pushing to rubygems.org
  - generator for creating new private gems
