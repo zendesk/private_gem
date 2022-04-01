@@ -43,7 +43,6 @@ module PrivateGem
       template "newgem/lib/newgem/version.rb.tt", "#{target}/lib/#{namespaced_path}/version.rb", opts
       template "newgem/test/minitest_helper.rb.tt", "#{target}/test/minitest_helper.rb", opts
       template "newgem/test/test_newgem.rb.tt", "#{target}/test/test_#{namespaced_path}.rb", opts
-      template "newgem/travis.yml.tt", "#{target}/.travis.yml", opts
       if options[:bin]
         template "newgem/bin/newgem.tt", "#{target}/bin/#{name}", opts
       end

@@ -19,5 +19,6 @@ jobs:
         bundler-cache: true # runs 'bundle install' and caches installed gems automatically
     - name: rake
       run: |
+        gem install thor
         bundle config https://some-fake-gem-server.com 123:456
         bundle exec rake
