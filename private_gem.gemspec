@@ -20,5 +20,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'rake'
   spec.add_development_dependency 'byebug'
 
-  spec.required_ruby_version = '>= 2.4' # keep in sync with .github/workflows/actions.yml
+  spec.required_ruby_version = '>= 2.6' # keep in sync with .github/workflows/actions.yml
 end
